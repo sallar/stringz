@@ -1,9 +1,6 @@
 "use strict";
 
-module.exports = function(str, limit, padString, padPosition) {
-    padString = padString || "#";
-    padPosition = (["right", "left"].indexOf(padPosition) > -1) ? padPosition : "right";
-
+export default function limitStringLength(str, limit = 16, padString = "#", padPosition = "right") {
     if (typeof str !== "string" || typeof limit !== "number") {
         throw new Error("Invalid arguments specified");
     }

@@ -1,10 +1,12 @@
 {
   "name": "limit-string-length",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Limits a string length to a specified width",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "npm test"
+    "build": "babel src --out-dir dist",
+    "test": "mocha --compilers js:babel-core/register",
+    "prepublish": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/sallar/limit-string-length/issues"
   },
-  "homepage": "https://github.com/sallar/limit-string-length#readme"
+  "homepage": "https://github.com/sallar/limit-string-length#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "mocha": "^2.5.3"
+  }
 }
