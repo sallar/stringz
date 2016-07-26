@@ -30,7 +30,7 @@ limit('Life’s like a box of chocolates.', 20); // "Life's like a box of"
 limit('Make emojis great again', 26, '💩'); // "Make emojis great again💩💩💩"
 
 // Pad Left:
-limit('What are you looking at?', 30, '+'); // "++++++What are you looking at?"
+limit('What are you looking at?', 30, '+', 'left'); // "++++++What are you looking at?"
 
 // Unicode Aware:
 limit("🤔🤔🤔", 2); // "🤔🤔"
@@ -56,7 +56,7 @@ $ npm run test
 
 | Version | Date       | Notes |
 |---------|------------|-------|
-| 0.0.7   | 2016-07-26 | First usable release |
+| 0.0.8   | 2016-07-26 | First usable release |
 
 ## License
 This software is released under the [MIT License](http://sallar.mit-license.org/).  
