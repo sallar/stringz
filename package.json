@@ -1,6 +1,6 @@
 {
   "name": "limit-string-length",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Limits a string length to a specified width",
   "main": "dist/index.js",
   "scripts": {
@@ -31,5 +31,8 @@
     "babel-core": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
     "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "unicode-substring": "^0.1.0"
   }
 }
