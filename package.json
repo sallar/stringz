@@ -1,0 +1,27 @@
+{
+  "name": "limit-string-length",
+  "version": "0.0.1",
+  "description": "Limits a string length to a specified width",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sallar/limit-string-length.git"
+  },
+  "keywords": [
+    "string",
+    "truncate",
+    "length",
+    "unicode",
+    "substr",
+    "substring"
+  ],
+  "author": "Sallar Kaboli <sallar.kaboli@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sallar/limit-string-length/issues"
+  },
+  "homepage": "https://github.com/sallar/limit-string-length#readme"
+}
