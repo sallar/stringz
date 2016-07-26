@@ -56,7 +56,7 @@ $ npm run test
 
 | Version | Date       | Notes |
 |---------|------------|-------|
-| 0.0.6   | 2016-07-26 | First usable release |
+| 0.0.7   | 2016-07-26 | First usable release |
 
 ## License
 This software is released under the [MIT License](http://sallar.mit-license.org/).  

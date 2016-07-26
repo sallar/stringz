@@ -1,6 +1,6 @@
 {
   "name": "limit-string-length",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Limits a string length to a specified width",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,11 @@
     "length",
     "unicode",
     "substr",
-    "substring"
+    "substring",
+    "emoji",
+    "pad",
+    "leftpad",
+    "rightpad"
   ],
   "author": "Sallar Kaboli <sallar.kaboli@gmail.com>",
   "license": "MIT",
