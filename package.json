@@ -1,6 +1,6 @@
 {
   "name": "limit-string-length",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Limits a string length to a specified width",
   "main": "dist/index.js",
   "scripts": {
