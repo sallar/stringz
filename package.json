@@ -1,12 +1,11 @@
 {
   "name": "limit-string-length",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Limits a string length to a specified width",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
     "test": "mocha --compilers js:babel-core/register",
-    "prepublish": "npm run test && npm run build"
+    "prepublish": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
