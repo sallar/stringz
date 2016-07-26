@@ -11,7 +11,7 @@ export default function(str, limit = 16, padString = "#", padPosition = "right")
         return substring(str, 0, limit);
     } else if (strLength < limit) {
         let padRepeats = padString.repeat(limit - strLength);
-        return padPosition == 'right'? str + padRepeats: padRepeats + str;
+        return padPosition == 'left'? padRepeats + str: str + padRepeats;
     }
     return str;
 }
