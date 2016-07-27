@@ -1,4 +1,4 @@
-# Limit String Length [![Build Status](https://travis-ci.org/sallar/limit-string-length.svg?branch=master)](https://travis-ci.org/sallar/limit-string-length)
+# Limit String Length [![Build Status](https://travis-ci.org/sallar/limit-string-length.svg?branch=master)](https://travis-ci.org/sallar/limit-string-length) [![codecov](https://codecov.io/gh/sallar/limit-string-length/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/limit-string-length)
 
 This small library limits a string to a specified width:
 
