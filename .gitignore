@@ -38,3 +38,8 @@ jspm_packages
 
 # Dist
 dist
+
+# NYC
+.nyc_output
+*.lcov
+coverage

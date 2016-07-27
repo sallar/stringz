@@ -4,7 +4,8 @@
   "description": "Limits a string length to a specified width",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "nyc --require babel-core/register mocha",
+    "nyc-report": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "prepublish": "babel src --out-dir dist"
   },
   "repository": {
@@ -34,7 +35,9 @@
     "babel-core": "^6.11.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.9.0",
-    "mocha": "^2.5.3"
+    "codecov": "^1.0.1",
+    "mocha": "^2.5.3",
+    "nyc": "^7.1.0"
   },
   "dependencies": {
     "unicode-substring": "^0.1.0"
