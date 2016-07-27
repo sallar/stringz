@@ -28,4 +28,9 @@ describe("Limit String Length", () => {
         assert.equal(limit("Life's like a box of chocolates.", 35, "/", "left"), "///Life's like a box of chocolates.");
     });
 
+    it("Throws an error if wrong arguments are specified.", () => {
+        assert.throws(() => limit(12), Error);
+        assert.throws(() => limit("abc", "abc"), Error);
+    });
+
 });
