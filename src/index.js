@@ -10,16 +10,8 @@ export default function(str, limit = 16, padString = "#", padPosition = "right")
     if (strLength > limit) {
         return substring(str, 0, limit);
     } else if (strLength < limit) {
-        let newString = str;
-        for (let i = 0; i < limit - strLength; i += 1) {
-            if (padPosition === "right") {
-                newString += padString;
-            } else {
-                newString = padString + newString;
-            }
-        }
-        return newString;
+        let padRepeats = padString.repeat(limit - strLength);
+        return padPosition == 'left'? padRepeats + str: str + padRepeats;
     }
-
     return str;
 }
