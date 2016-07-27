@@ -6,6 +6,10 @@ This small library limits a string to a specified width:
 - Pads the string using custom characters if the length is less than the limit, on the right or left
 - Works with unicode characters (Emojis, etc)
 
+🔥 Please note that this library is built for accuracy, not performance. It uses complex regular expressions to
+calculate the string length and perform other operations which are **not** particularly super-jawdropping-fast like
+the native `String.prototype.length`.
+
 ## Install
 ```bash
 $ npm install limit-string-length --save
@@ -56,6 +60,7 @@ $ npm run test
 
 | Version | Date       | Notes |
 |---------|------------|-------|
+| 0.0.9   | 2016-07-28 | Fixed unicode string length issue |
 | 0.0.8   | 2016-07-26 | First usable release |
 
 ## License

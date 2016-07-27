@@ -13,6 +13,7 @@ describe("Limit String Length", () => {
 
     it("Pads the string if it's less than the limit", () => {
         assert.equal(limit("Life's like a box of chocolates.", 35), "Life's like a box of chocolates.###");
+        assert.equal(limit("🔥🔥", 4), "🔥🔥##");
     });
 
     it("Doesn't modify the string if the length is the same", () => {

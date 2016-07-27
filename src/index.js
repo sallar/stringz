@@ -1,17 +1,19 @@
 import substring from "unicode-substring";
+import { length } from "./length";
 
 export default function(str, limit = 16, padString = "#", padPosition = "right") {
     if (typeof str !== "string" || typeof limit !== "number") {
         throw new Error("Invalid arguments specified");
     }
     
-    const strLength = str.length;
+    // Calculate string length considering astral code points
+    const strLength = length(str);
 
     if (strLength > limit) {
         return substring(str, 0, limit);
     } else if (strLength < limit) {
-        let padRepeats = padString.repeat(limit - strLength);
-        return padPosition == 'left'? padRepeats + str: str + padRepeats;
+        const padRepeats = padString.repeat(limit - strLength);
+        return (padPosition === "left") ? padRepeats + str : str + padRepeats;
     }
     return str;
 }
