@@ -9,6 +9,7 @@ describe("Limit String Length", () => {
 
     it("Truncates the string if it includes unicode characters", () => {
         assert.equal(limit("Life's like a box of 🍫s.", 22), "Life's like a box of 🍫");
+        assert.equal(limit("Life's like a box of 👍🏽s.", 22), "Life's like a box of 👍🏽");
     });
 
     it("Pads the string if it's less than the limit", () => {

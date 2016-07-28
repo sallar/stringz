@@ -7,3 +7,7 @@ const astralRange = /\ud83c[\udffb-\udfff](?=\ud83c[\udffb-\udfff])|(?:[^\ud800-
 export function length(str) {
     return str.match(astralRange).length;
 }
+
+export function substring(str, begin, end) {
+    return str.match(astralRange).slice(begin, end).join("");
+}
