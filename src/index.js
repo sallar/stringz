@@ -1,5 +1,4 @@
-import substring from "unicode-substring";
-import { length } from "./length";
+import { length, substring } from "./string";
 
 export default function(str, limit = 16, padString = "#", padPosition = "right") {
     if (typeof str !== "string" || typeof limit !== "number") {

@@ -1,6 +1,6 @@
 # Limit String Length [![Build Status](https://travis-ci.org/sallar/limit-string-length.svg?branch=master)](https://travis-ci.org/sallar/limit-string-length) [![codecov](https://codecov.io/gh/sallar/limit-string-length/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/limit-string-length)
 
-This small library limits a string to a specified width:
+This small zero-dependency node.js module limits a string to a specified width:
 
 - Truncates the string if the length is more than the limit
 - Pads the string using custom characters if the length is less than the limit, on the right or left
@@ -60,6 +60,7 @@ $ npm run test
 
 | Version | Date       | Notes |
 |---------|------------|-------|
+| 0.0.10  | 2016-07-29 | Fixed substring issue |
 | 0.0.9   | 2016-07-28 | Fixed unicode string length issue |
 | 0.0.8   | 2016-07-26 | First usable release |
 

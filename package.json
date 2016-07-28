@@ -1,6 +1,6 @@
 {
   "name": "limit-string-length",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Limits a string length to a specified width",
   "main": "dist/index.js",
   "scripts": {
@@ -38,8 +38,5 @@
     "codecov": "^1.0.1",
     "mocha": "^2.5.3",
     "nyc": "^7.1.0"
-  },
-  "dependencies": {
-    "unicode-substring": "^0.1.0"
   }
 }
