@@ -1,4 +1,4 @@
-# Stringz [![Build Status](https://travis-ci.org/sallar/limit-string-length.svg?branch=master)](https://travis-ci.org/sallar/limit-string-length) [![codecov](https://codecov.io/gh/sallar/limit-string-length/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/limit-string-length)
+# Stringz [![Build Status](https://travis-ci.org/sallar/stringz.svg?branch=master)](https://travis-ci.org/sallar/stringz) [![codecov](https://codecov.io/gh/sallar/stringz/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/stringz)
 
 A really small, zero-dependency, unicode-aware library for working with Strings in Node.js.
 
