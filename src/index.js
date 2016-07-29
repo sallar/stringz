@@ -1,6 +1,14 @@
-import { length, substring } from "./string";
+import { astralRange } from "./string";
 
-export default function(str, limit = 16, padString = "#", padPosition = "right") {
+export function length(str) {
+    return str.match(astralRange).length;
+}
+
+export function substring(str, begin, end) {
+    return str.match(astralRange).slice(begin, end).join("");
+}
+
+export function limit(str, limit = 16, padString = "#", padPosition = "right") {
     if (typeof str !== "string" || typeof limit !== "number") {
         throw new Error("Invalid arguments specified");
     }

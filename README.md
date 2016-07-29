@@ -1,10 +1,17 @@
-# Limit String Length [![Build Status](https://travis-ci.org/sallar/limit-string-length.svg?branch=master)](https://travis-ci.org/sallar/limit-string-length) [![codecov](https://codecov.io/gh/sallar/limit-string-length/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/limit-string-length)
+# Stringz [![Build Status](https://travis-ci.org/sallar/limit-string-length.svg?branch=master)](https://travis-ci.org/sallar/limit-string-length) [![codecov](https://codecov.io/gh/sallar/limit-string-length/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/limit-string-length)
 
-This small zero-dependency node.js module limits a string to a specified width:
+A really small, zero-dependency, unicode-aware library for working with Strings in Node.js.
 
-- Truncates the string if the length is more than the limit
-- Pads the string using custom characters if the length is less than the limit, on the right or left
-- Works with unicode characters (Emojis, etc)
+Javascript has a serious problem with unicode. Even ES6 can’t solve the problem entirely since some characters like the
+new colored emojis are three bytes instead of two bytes. Sometimes even more! `"👍🏽".length` returns `4` which is totally
+wrong (hint: it should be 1!). ES6's `Array.from` tried to solve this, but that even fails: `Array.from("👍🏽")` returns
+`["👍", "🏽"]` which is incorrect. This library tries to tackle all these problems with a mega RegExp.
+[Read More Here](https://mathiasbynens.be/notes/javascript-unicode).
+
+## Features
+- Limit string to width (truncate/pad)
+- Unicode-aware string length
+- Unicode-aware substring
 
 🔥 Please note that this library is built for accuracy, not performance. It uses complex regular expressions to
 calculate the string length and perform other operations which are **not** particularly super-jawdropping-fast like
@@ -12,36 +19,23 @@ the native `String.prototype.length`.
 
 ## Install
 ```bash
-$ npm install limit-string-length --save
+$ npm install stringz --save
 ```
 
 And import it in your awesome node app:
 
 ```javascript
 // ES2015+
-import limit from 'limit-string-length';
+import * as stringz from 'stringz'; // OR:
+import { limit, substring, length } from 'stringz';
 
 // CommonJS
-var limit = require('limit-string-length');
+var stringz = require('stringz');
+// use like: stringz.limit ...
 ```
 
 ## Usage
-```javascript
-// Truncate:
-limit('Life’s like a box of chocolates.', 20); // "Life's like a box of"
-
-// Pad:
-limit('Make emojis great again', 26, '💩'); // "Make emojis great again💩💩💩"
-
-// Pad Left:
-limit('What are you looking at?', 30, '+', 'left'); // "++++++What are you looking at?"
-
-// Unicode Aware:
-limit("🤔🤔🤔", 2); // "🤔🤔"
-limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽" 
-```
-
-## Parameters
+### Limit String to Width
     function limit(str[, limit[, padStr[, padPosition]]])
 
 | Param | Type | Default | Description |
@@ -51,9 +45,49 @@ limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽"
 | padStr | <code>String</code> | <code>"#"</code> | Character to pad the output with | 
 | padPosition | <code>String</code> | <code>"right"</code> | Pad position: <code>"right"</code> or <code>"left"</code>
 
+#### Examples
+```javascript
+// Truncate:
+limit("Life’s like a box of chocolates.", 20); // "Life's like a box of"
+
+// Pad:
+limit("Make emojis great again", 26, "💩"); // "Make emojis great again💩💩💩"
+limit("What are you looking at?", 30, "+", "left"); // "++++++What are you looking at?"
+
+// Unicode Aware:
+limit("🤔🤔🤔", 2); // "🤔🤔"
+limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽" 
+```
+
+### String Length
+    function length(str)
+
+| Param | Type | Default | Description |
+|---|---|---|---|
+| str | <code>String</code> | *none* | String to return the length for |
+
+#### Examples
+```javascript
+length("Iñtërnâtiônàlizætiøn☃💩"); // 22
+```
+
+### Substring
+    function substring(str, start[, end])
+
+| Param | Type | Default | Description |
+|---|---|---|---|
+| str | <code>String</code> | *none* | String to be devided |
+| start | <code>Number</code> | *none* | Start position |
+| end | <code>Number</code> | End of string | End position |
+
+#### Examples
+```javascript
+substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍🏽 are 🍆"
+```
+
 ## Test
 ```bash
-$ npm run test
+$ npm test
 ```
 
 
@@ -61,6 +95,7 @@ $ npm run test
 
 | Version | Date       | Notes |
 |---------|------------|-------|
+| 0.1.0   | 2016-07-29 | Renamed to Stringz, more tools |
 | 0.0.10  | 2016-07-29 | Fixed substring issue |
 | 0.0.9   | 2016-07-28 | Fixed unicode string length issue |
 | 0.0.8   | 2016-07-26 | First usable release |

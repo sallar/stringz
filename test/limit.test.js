@@ -1,5 +1,5 @@
 import assert from "assert";
-import limit from "../src/index";
+import { limit } from "../src/index";
 
 describe("Limit String Length", () => {
 

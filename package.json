@@ -1,7 +1,7 @@
 {
-  "name": "limit-string-length",
-  "version": "0.0.10",
-  "description": "Limits a string length to a specified width",
+  "name": "stringz",
+  "version": "0.1.0",
+  "description": "Zero-dependency unicode-aware string tools",
   "main": "dist/index.js",
   "scripts": {
     "test": "nyc --require babel-core/register mocha",
@@ -22,7 +22,9 @@
     "emoji",
     "pad",
     "leftpad",
-    "rightpad"
+    "rightpad",
+    "length",
+    "count"
   ],
   "author": "Sallar Kaboli <sallar.kaboli@gmail.com>",
   "license": "MIT",
