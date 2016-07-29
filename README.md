@@ -38,6 +38,7 @@ limit('What are you looking at?', 30, '+', 'left'); // "++++++What are you looki
 
 // Unicode Aware:
 limit("🤔🤔🤔", 2); // "🤔🤔"
+limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽" 
 ```
 
 ## Parameters
