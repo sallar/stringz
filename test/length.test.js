@@ -17,4 +17,8 @@ describe("Count String Length", () => {
         assert.strictEqual(length("👍🏽💩😊💪🏼😻"), 5);
     });
 
+    it("Throws an error if wrong arguments are specified.", () => {
+        assert.throws(() => length(445), Error);
+    });
+
 });

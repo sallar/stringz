@@ -15,4 +15,8 @@ describe("Substring", () => {
         assert.strictEqual(substring(unicodeString, 0, 11), "علم نور است");
         assert.strictEqual(substring(emojiString, 7, 14), "👍🏽 are 🍆");
     });
+
+    it("Throws an error if wrong arguments are specified.", () => {
+        assert.throws(() => substring(12, 1, 2), Error);
+    });
 });

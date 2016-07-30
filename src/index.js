@@ -1,10 +1,16 @@
 import { astralRange } from "./string";
 
 export function length(str) {
+    if (typeof str !== "string") {
+        throw new Error("Input must be a string");
+    }
     return str.match(astralRange).length;
 }
 
 export function substring(str, begin, end) {
+    if (typeof str !== "string") {
+        throw new Error("Input must be a string");
+    }
     return str.match(astralRange).slice(begin, end).join("");
 }
 
