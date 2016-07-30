@@ -9,6 +9,14 @@ export function substring(str, begin, end) {
 }
 
 export function limit(str, limit = 16, padString = "#", padPosition = "right") {
+    if( ["string", "undefined"].indexOf( typeof str ) === -1  ){
+        str = str.toString();
+    }
+    
+    if( typeof padString !== 'string' ){
+        padString = padString.toString();
+    }
+    
     if (typeof str !== "string" || typeof limit !== "number") {
         throw new Error("Invalid arguments specified");
     }
