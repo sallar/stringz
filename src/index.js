@@ -1,6 +1,7 @@
 import { astralRange } from "./string";
 
 export function length(str) {
+    // Check for input
     if (typeof str !== "string") {
         throw new Error("Input must be a string");
     }
@@ -9,6 +10,7 @@ export function length(str) {
 }
 
 export function substring(str, begin = 0, end) {
+    // Check for input
     if (typeof str !== "string") {
         throw new Error("Input must be a string");
     }
@@ -26,14 +28,17 @@ export function substring(str, begin = 0, end) {
 }
 
 export function limit(str, limit = 16, padString = "#", padPosition = "right") {
+    // Input should be a string, limit should be a number
     if (typeof str !== "string" || typeof limit !== "number") {
         throw new Error("Invalid arguments specified");
     }
 
+    // Pad position should be either left or right
     if (["left", "right"].indexOf(padPosition) === -1) {
         throw new Error("Pad position should be either left or right");
     }
 
+    // Pad string can be anything, we convert it to string
     if (typeof padString !== "string") {
         padString = String(padString);
     }
@@ -47,5 +52,6 @@ export function limit(str, limit = 16, padString = "#", padPosition = "right") {
         const padRepeats = padString.repeat(limit - strLength);
         return (padPosition === "left") ? padRepeats + str : str + padRepeats;
     }
+    
     return str;
 }
