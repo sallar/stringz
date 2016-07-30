@@ -16,6 +16,16 @@ describe("Substring", () => {
         assert.strictEqual(substring(emojiString, 7, 14), "👍🏽 are 🍆");
     });
 
+    it("Substrings if arguments are unspecified", () => {
+        assert.strictEqual(substring(string, 10), string.substring(10));
+        assert.strictEqual(substring(string), string);
+    });
+
+    it("Substrings even with negative arguments", () => {
+        assert.strictEqual(substring(string, -10), string.substring(-10));
+        assert.strictEqual(substring(string, -10, -10), string.substring(-10, -10));
+    });
+
     it("Throws an error if wrong arguments are specified.", () => {
         assert.throws(() => substring(12, 1, 2), Error);
     });

@@ -7,9 +7,16 @@ export function length(str) {
     return str.match(astralRange).length;
 }
 
-export function substring(str, begin, end) {
+export function substring(str, begin = 0, end) {
     if (typeof str !== "string") {
         throw new Error("Input must be a string");
+    }
+    // Even though negative numbers work here, theyre not in the spec
+    if (typeof begin !== "number" || begin < 0) {
+        begin = 0;
+    }
+    if (typeof end === "number" && end < 0) {
+        end = 0;
     }
     return str.match(astralRange).slice(begin, end).join("");
 }
