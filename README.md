@@ -95,6 +95,7 @@ $ npm test
 
 | Version | Date       | Notes |
 |---------|------------|-------|
+| 0.1.1   | 2016-07-31 | More strict type checking, more tests |
 | 0.1.0   | 2016-07-29 | Renamed to Stringz, more tools |
 | 0.0.10  | 2016-07-29 | Fixed substring issue |
 | 0.0.9   | 2016-07-28 | Fixed unicode string length issue |
