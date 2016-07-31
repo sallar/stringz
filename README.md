@@ -8,6 +8,8 @@ wrong (hint: it should be 1!). ES6's `Array.from` tried to solve this, but that 
 `["👍", "🏽"]` which is incorrect. This library tries to tackle all these problems with a mega RegExp.
 [Read More Here](https://mathiasbynens.be/notes/javascript-unicode).
 
+🎈 Based on a RegExp copied from the [Lodash](https://github.com/lodash/lodash) library.
+
 ## Features
 - Limit string to width (truncate/pad)
 - Unicode-aware string length
@@ -102,24 +104,7 @@ $ npm test
 | 0.0.8   | 2016-07-26 | First usable release |
 
 ## License
-This software is released under the [MIT License](http://sallar.mit-license.org/).  
+This software is released under the [MIT License](http://sallar.mit-license.org/).
 
-    Copyright © 2016 Sallar Kaboli <sallar.kaboli@gmail.com>
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the “Software”), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
+Uses a RegExp from the [Lodash](https://github.com/lodash/lodash) which is released under the
+[MIT License](https://raw.githubusercontent.com/lodash/lodash/4.14.1/LICENSE).
