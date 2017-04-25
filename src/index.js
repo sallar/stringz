@@ -6,7 +6,8 @@ export function length(str) {
         throw new Error("Input must be a string");
     }
 
-    return str.match(astralRange).length;
+    const match = str.match(astralRange);
+    return (match === null) ? 0 : match.length;
 }
 
 export function substring(str, begin = 0, end) {
