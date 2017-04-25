@@ -92,11 +92,11 @@ substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍�
 $ npm test
 ```
 
-
 ## Changelog
 
 | Version | Date       | Notes |
 |---------|------------|-------|
+| 0.1.2   | 2017-04-25 | Fix null length issue #8 |
 | 0.1.1   | 2016-07-31 | More strict type checking, more tests |
 | 0.1.0   | 2016-07-29 | Renamed to Stringz, more tools |
 | 0.0.10  | 2016-07-29 | Fixed substring issue |

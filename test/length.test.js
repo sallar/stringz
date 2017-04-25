@@ -10,6 +10,10 @@ describe("Count String Length", () => {
         assert.strictEqual(length("سلام خوبی؟"), 10);
     });
 
+    it("Counts empty strings correctly", () => {
+        assert.strictEqual(length(""), 0);
+    });
+
     it("Counts emojis correctly", () => {
         assert.strictEqual(length("🐴"), 1);
         assert.strictEqual(length("❤️"), 1);
