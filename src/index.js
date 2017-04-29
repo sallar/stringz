@@ -28,6 +28,31 @@ export function substring(str, begin = 0, end) {
     return str.match(astralRange).slice(begin, end).join("");
 }
 
+export function substr(str, begin = 0, len) {
+    // Check for input
+    if (typeof str !== "string") {
+        throw new Error("Input must be a string");
+    }
+
+    if (typeof begin !== "number") {
+        begin = 0;
+    }
+    // Calculating postive version of negative value.
+    else if(begin < 0) {
+        begin+= length(str);
+    }
+
+    let end = undefined;
+    if (typeof len === "number" && len >= 0) {
+        end = len + begin;
+    }
+    else if(typeof len === "number" && len < 0){
+        end = 0;
+    }
+
+    return str.match(astralRange).slice(begin, end).join("");
+}
+
 export function limit(str, limit = 16, padString = "#", padPosition = "right") {
     // Input should be a string, limit should be a number
     if (typeof str !== "string" || typeof limit !== "number") {
