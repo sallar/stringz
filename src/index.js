@@ -42,28 +42,30 @@ export function substr(str, begin = 0, len) {
     }
 
     // Return zero-length string if got oversize number.
-    if(begin >= strLength){
+    if (begin >= strLength) {
         return "";
     }
+
     // Calculating postive version of negative value.
-    else if(begin < 0) {
-        begin+= strLength;
+    if (begin < 0) {
+        begin += strLength;
     }
 
-    let end = undefined;
-    if(typeof len === "undefined"){
+    let end;
+
+    if (typeof len === "undefined") {
         end = strLength;
     }
     else {
         // Fix type
-        if (typeof len !== "number"){
-            len = parseInt(len);
+        if (typeof len !== "number") {
+            len = parseInt(len, 10);
         }
         if (len >= 0) {
             end = len + begin;
         }
-        else{
-            end = begin;
+        else {
+            end= begin;
         }
     }
 
