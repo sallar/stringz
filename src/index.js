@@ -34,20 +34,37 @@ export function substr(str, begin = 0, len) {
         throw new Error("Input must be a string");
     }
 
+    const strLength = length(str);
+
+    // Fix type
     if (typeof begin !== "number") {
-        begin = 0;
+        begin = parseInt(begin);
+    }
+
+    // Return zero-length string if got oversize number.
+    if(begin >= strLength){
+        return "";
     }
     // Calculating postive version of negative value.
     else if(begin < 0) {
-        begin+= length(str);
+        begin+= strLength;
     }
 
     let end = undefined;
-    if (typeof len === "number" && len >= 0) {
-        end = len + begin;
+    if(typeof len === "undefined"){
+        end = strLength;
     }
-    else if(typeof len === "number" && len < 0){
-        end = 0;
+    else {
+        // Fix type
+        if (typeof len !== "number"){
+            len = parseInt(len);
+        }
+        if (len >= 0) {
+            end = len + begin;
+        }
+        else{
+            end = begin;
+        }
     }
 
     return str.match(astralRange).slice(begin, end).join("");
