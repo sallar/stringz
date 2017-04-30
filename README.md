@@ -14,6 +14,7 @@ wrong (hint: it should be 1!). ES6's `Array.from` tried to solve this, but that 
 - Limit string to width (truncate/pad)
 - Unicode-aware string length
 - Unicode-aware substring
+- Unicode-aware substr
 
 🔥 Please note that this library is built for accuracy, not performance. It uses complex regular expressions to
 calculate the string length and perform other operations which are **not** particularly super-jawdropping-fast like
@@ -29,7 +30,7 @@ And import it in your awesome node app:
 ```javascript
 // ES2015+
 import * as stringz from 'stringz'; // OR:
-import { limit, substring, length } from 'stringz';
+import { limit, substring, length, substr } from 'stringz';
 
 // CommonJS
 var stringz = require('stringz');
@@ -85,6 +86,19 @@ length("Iñtërnâtiônàlizætiøn☃💩"); // 22
 #### Examples
 ```javascript
 substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍🏽 are 🍆"
+```
+### Substr
+    function substr(str[, start[, end]])
+
+| Param | Type | Default | Description |
+|---|---|---|---|
+| str | <code>String</code> | *none* | String to be devided |
+| start | <code>Number</code> | Start of string | Start position |
+| end | <code>Number</code> | String length minus `start` parameter | Length of result |
+
+#### Examples
+```javascript
+substr("A.C. Milan 🇮🇹⚽️", 5, 7); // "Milan 🇮🇹"
 ```
 
 ## Test
