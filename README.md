@@ -86,6 +86,19 @@ length("Iñtërnâtiônàlizætiøn☃💩"); // 22
 ```javascript
 substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍🏽 are 🍆"
 ```
+### Substr
+    function substr(str[, start[, end]])
+
+| Param | Type | Default | Description |
+|---|---|---|---|
+| str | <code>String</code> | *none* | String to be devided |
+| start | <code>Number</code> | Start of string | Start position |
+| end | <code>Number</code> | String length minus `start` parameter | Length of result |
+
+#### Examples
+```javascript
+substr("A.C. Milan 🇮🇹⚽️", 5, 7); // "Milan 🇮🇹"
+```
 
 ## Test
 ```bash
