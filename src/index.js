@@ -38,7 +38,7 @@ export function substr(str, begin = 0, len) {
 
     // Fix type
     if (typeof begin !== "number") {
-        begin = parseInt(begin);
+        begin = parseInt(begin, 10);
     }
 
     // Return zero-length string if got oversize number.
