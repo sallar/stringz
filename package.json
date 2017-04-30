@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sallar/limit-string-length.git"
+    "url": "git+https://github.com/sallar/stringz.git"
   },
   "keywords": [
     "string",
@@ -30,9 +30,9 @@
   "author": "Sallar Kaboli <sallar.kaboli@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sallar/limit-string-length/issues"
+    "url": "https://github.com/sallar/stringz/issues"
   },
-  "homepage": "https://github.com/sallar/limit-string-length#readme",
+  "homepage": "https://github.com/sallar/stringz#readme",
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.11.4",
