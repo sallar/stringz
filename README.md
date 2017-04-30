@@ -10,7 +10,10 @@ wrong (hint: it should be 1!). ES6's `Array.from` tried to solve this, but that 
 
 🎈 Based on a RegExp copied from the [Lodash](https://github.com/lodash/lodash) library.
 
+[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 ## Features
+
 - Limit string to width (truncate/pad)
 - Unicode-aware string length
 - Unicode-aware substring
@@ -21,6 +24,7 @@ calculate the string length and perform other operations which are **not** parti
 the native `String.prototype.length`.
 
 ## Install
+
 ```bash
 $ npm install stringz --save
 ```
@@ -38,7 +42,9 @@ var stringz = require('stringz');
 ```
 
 ## Usage
+
 ### Limit String to Width
+
     function limit(str[, limit[, padStr[, padPosition]]])
 
 | Param | Type | Default | Description |
@@ -49,6 +55,7 @@ var stringz = require('stringz');
 | padPosition | <code>String</code> | <code>"right"</code> | Pad position: <code>"right"</code> or <code>"left"</code>
 
 #### Examples
+
 ```javascript
 // Truncate:
 limit("Life’s like a box of chocolates.", 20); // "Life's like a box of"
@@ -63,6 +70,7 @@ limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽"
 ```
 
 ### String Length
+
     function length(str)
 
 | Param | Type | Default | Description |
@@ -70,11 +78,13 @@ limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽"
 | str | <code>String</code> | *none* | String to return the length for |
 
 #### Examples
+
 ```javascript
 length("Iñtërnâtiônàlizætiøn☃💩"); // 22
 ```
 
 ### Substring
+
     function substring(str, start[, end])
 
 | Param | Type | Default | Description |
@@ -84,24 +94,29 @@ length("Iñtërnâtiônàlizætiøn☃💩"); // 22
 | end | <code>Number</code> | End of string | End position |
 
 #### Examples
+
 ```javascript
 substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍🏽 are 🍆"
 ```
+
 ### Substr
-    function substr(str[, start[, end]])
+
+    function substr(str[, start[, length]])
 
 | Param | Type | Default | Description |
 |---|---|---|---|
 | str | <code>String</code> | *none* | String to be devided |
 | start | <code>Number</code> | Start of string | Start position |
-| end | <code>Number</code> | String length minus `start` parameter | Length of result |
+| length | <code>Number</code> | String length minus `start` parameter | Length of result |
 
 #### Examples
+
 ```javascript
 substr("A.C. Milan 🇮🇹⚽️", 5, 7); // "Milan 🇮🇹"
 ```
 
 ## Test
+
 ```bash
 $ npm test
 ```
@@ -118,6 +133,7 @@ $ npm test
 | 0.0.8   | 2016-07-26 | First usable release |
 
 ## License
+
 This software is released under the [MIT License](http://sallar.mit-license.org/).
 
 Uses a RegExp from the [Lodash](https://github.com/lodash/lodash) which is released under the
