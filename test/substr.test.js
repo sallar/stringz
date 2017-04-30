@@ -8,7 +8,7 @@ describe("Substr", () => {
 
     it("Substrs latin text correctly", () => {
         assert.strictEqual(substr("Iñtërnâtiônàlizætiøn☃", 0, 10), "Iñtërnâtiô");
-        assert.strictEqual(substr(string, 25, 32), "the universe and human stupidity");
+        assert.strictEqual(substr(string, 25, 32), string.substr(25, 32));
     });
 
     it("Substrs unicode text correctly", () => {
@@ -18,12 +18,14 @@ describe("Substr", () => {
 
     it("Substrs if arguments are unspecified", () => {
         assert.strictEqual(substr(string, 10), string.substr(10));
+        assert.strictEqual(substr(string, 120), string.substr(120));
+        assert.strictEqual(substr(string, '1', '2'), string.substr('1', '2'));
         assert.strictEqual(substr(string), string);
     });
 
     it("Substrs even with negative arguments", () => {
-        assert.strictEqual(substr(string, 0, -10), string.substr(0, -10));
-        assert.strictEqual(substr(string, -10, -10), string.substr(-10, -10));
+        assert.strictEqual(substr(string, -4), string.substr(-4));
+        assert.strictEqual(substr(string, -4, -1), string.substr(-4, -1));
     });
 
     it("Throws an error if wrong arguments are specified.", () => {
