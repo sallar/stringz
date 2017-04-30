@@ -4,7 +4,7 @@
   "description": "Zero-dependency unicode-aware string tools",
   "main": "dist/index.js",
   "scripts": {
-    "test": "nyc --require babel-core/register mocha",
+    "test": "npm run lint && nyc --require babel-core/register mocha",
     "lint": "eslint ./",
     "nyc-report": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "prepublish": "babel src --out-dir dist"
@@ -39,6 +39,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.9.0",
     "codecov": "^1.0.1",
+    "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
@@ -47,7 +48,5 @@
     "mocha": "^2.5.3",
     "nyc": "^7.1.0"
   },
-  "dependencies": {
-    "eslint": "^3.19.0"
-  }
+  "dependencies": {}
 }
