@@ -1,5 +1,12 @@
 import { astralRange } from './string'
 
+/**
+ * Returns the length of a string
+ *
+ * @export
+ * @param {string} str
+ * @returns {number}
+ */
 export function length (str) {
   // Check for input
   if (typeof str !== 'string') {
@@ -10,6 +17,15 @@ export function length (str) {
   return (match === null) ? 0 : match.length
 }
 
+/**
+ * Returns a substring by providing start and end position
+ *
+ * @export
+ * @param {string} str
+ * @param {number} [begin=0] Starting position
+ * @param {number} end End position
+ * @returns {string}
+ */
 export function substring (str, begin = 0, end) {
   // Check for input
   if (typeof str !== 'string') {
@@ -28,6 +44,15 @@ export function substring (str, begin = 0, end) {
   return str.match(astralRange).slice(begin, end).join('')
 }
 
+/**
+ * Returns a substring by providing start position and length
+ *
+ * @export
+ * @param {string} str
+ * @param {number} [begin=0] Starting position
+ * @param {number} len Desired length
+ * @returns {string}
+ */
 export function substr (str, begin = 0, len) {
   // Check for input
   if (typeof str !== 'string') {
@@ -46,7 +71,7 @@ export function substr (str, begin = 0, len) {
     return ''
   }
 
-    // Calculating postive version of negative value.
+  // Calculating postive version of negative value.
   if (begin < 0) {
     begin += strLength
   }
@@ -60,16 +85,24 @@ export function substr (str, begin = 0, len) {
     if (typeof len !== 'number') {
       len = parseInt(len, 10)
     }
-    if (len >= 0) {
-      end = len + begin
-    } else {
-      end = begin
-    }
+
+    end = (len >= 0) ? len + begin : begin
   }
 
   return str.match(astralRange).slice(begin, end).join('')
 }
 
+/**
+ * Enforces a string to be a certain length by
+ * adding or removing characters
+ *
+ * @export
+ * @param {string} str
+ * @param {number} [limit=16] Limit
+ * @param {string} [padString='#'] The Pad String
+ * @param {string} [padPosition='right'] The Pad Position
+ * @returns {string}
+ */
 export function limit (str, limit = 16, padString = '#', padPosition = 'right') {
   // Input should be a string, limit should be a number
   if (typeof str !== 'string' || typeof limit !== 'number') {
