@@ -1,8 +1,9 @@
 {
   "name": "stringz",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Zero-dependency unicode-aware string tools",
   "main": "dist/index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "npm run lint && nyc --require babel-core/register mocha",
     "lint": "eslint ./",
