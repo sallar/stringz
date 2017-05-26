@@ -125,6 +125,7 @@ $ npm test
 
 | Version | Date       | Notes |
 |---------|------------|-------|
+| 0.2.1   | 2017-05-27 | Add Typescript Definitions |
 | 0.2.0   | 2017-04-30 | [New `substr` function](https://github.com/sallar/stringz/pull/10) |
 | 0.1.2   | 2017-04-25 | Fix null length issue #8 |
 | 0.1.1   | 2016-07-31 | More strict type checking, more tests |
