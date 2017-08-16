@@ -1,0 +1,20 @@
+{
+  "name": "benchmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "emoji-aware": "^3.0.1",
+    "lodash": "^4.17.4",
+    "spliddit": "^2.1.1",
+    "stringz": "^0.2.2",
+    "utf8-length": "0.0.1"
+  }
+}

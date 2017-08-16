@@ -1,6 +1,6 @@
 # Stringz [![Build Status](https://travis-ci.org/sallar/stringz.svg?branch=master)](https://travis-ci.org/sallar/stringz) [![codecov](https://codecov.io/gh/sallar/stringz/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/stringz)
 
-A really small, zero-dependency, unicode-aware library for working with Strings in Node.js.
+A really small, performant, zero-dependency, unicode-aware library for working with Strings in Node.js.
 
 Javascript has a serious problem with unicode. Even ES6 can’t solve the problem entirely since some characters like the
 new colored emojis are three bytes instead of two bytes. Sometimes even more! `"👍🏽".length` returns `4` which is totally
@@ -18,10 +18,7 @@ wrong (hint: it should be 1!). ES6's `Array.from` tried to solve this, but that 
 - Unicode-aware string length
 - Unicode-aware substring
 - Unicode-aware substr
-
-🔥 Please note that this library is built for accuracy, not performance. It uses complex regular expressions to
-calculate the string length and perform other operations which are **not** particularly super-jawdropping-fast like
-the native `String.prototype.length`.
+- Performant
 
 ## Install
 
@@ -119,6 +116,27 @@ substr("A.C. Milan 🇮🇹⚽️", 5, 7); // "Milan 🇮🇹"
 
 ```bash
 $ npm test
+```
+
+## Benchmark
+
+This library scores high in a length benchmark (it's intended usage) and should be fast for most use case.
+
+```
+Stringz .length (accruate) x 861,039 ops/sec ±1.57% (84 runs sampled)
+Lodash .toArray (accruate) x 795,108 ops/sec ±2.13% (82 runs sampled)
+Emoji Aware .split (inaccurate) x 2,269 ops/sec ±1.38% (85 runs sampled)
+Spliddit .length (inaccurate) x 487,718 ops/sec ±2.21% (83 runs sampled)
+UTF8 Length (inaccurate) x 232,918 ops/sec ±1.02% (87 runs sampled)
+Fastest is Stringz .length
+```
+
+To run benchmarks yourself:
+
+``` bash
+$ cd ./benchmark
+$ npm install
+$ node run.js
 ```
 
 ## Changelog
