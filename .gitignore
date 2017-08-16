@@ -43,3 +43,6 @@ dist
 .nyc_output
 *.lcov
 coverage
+
+# Benchmarks
+benchmark/package-lock.json
