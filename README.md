@@ -18,7 +18,7 @@ wrong (hint: it should be 1!). ES6's `Array.from` tried to solve this, but that 
 - Unicode-aware string length
 - Unicode-aware substring
 - Unicode-aware substr
-- Performant
+- High performance
 
 ## Install
 
@@ -123,8 +123,8 @@ $ npm test
 This library scores high in a length benchmark (it's intended usage) and should be fast for most use case.
 
 ```
-Stringz .length (accruate) x 861,039 ops/sec ±1.57% (84 runs sampled)
-Lodash .toArray (accruate) x 795,108 ops/sec ±2.13% (82 runs sampled)
+Stringz .length (accurate) x 861,039 ops/sec ±1.57% (84 runs sampled)
+Lodash .toArray (accurate) x 795,108 ops/sec ±2.13% (82 runs sampled)
 Emoji Aware .split (inaccurate) x 2,269 ops/sec ±1.38% (85 runs sampled)
 Spliddit .length (inaccurate) x 487,718 ops/sec ±2.21% (83 runs sampled)
 UTF8 Length (inaccurate) x 232,918 ops/sec ±1.02% (87 runs sampled)
