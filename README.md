@@ -112,6 +112,23 @@ substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍�
 substr("A.C. Milan 🇮🇹⚽️", 5, 7); // "Milan 🇮🇹"
 ```
 
+### IndexOf
+
+    function indexOf(str[, searchStr[, position]])
+
+| Param | Type | Default | Description |
+|---|---|---|---|
+| str | <code>String</code> | *none* | String to get index |
+| searchStr | <code>String</code> | *none* | String to be searched |
+| position | <code>Number</code> | 0 | Start of searching |
+
+#### Examples
+
+```javascript
+indexOf("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", "are"); // 9
+indexOf("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", "are", 10); // 26
+```
+
 ## Test
 
 ```bash
