@@ -8,6 +8,7 @@ describe('IndexOf', () => {
     assert.strictEqual(indexOf('Blue Whale', 'Whale', 0), 'Blue Whale'.indexOf('Whale', 0))
     assert.strictEqual(indexOf('Blue Whale', 'Whale', 5), 'Blue Whale'.indexOf('Whale', 5))
     assert.strictEqual(indexOf('Blue Whale', 'Whale', 7), 'Blue Whale'.indexOf('Whale', 7))
+    assert.strictEqual(indexOf('Blue Whale', 'Whale', 10), 'Blue Whale'.indexOf('Whale', 10))
     assert.strictEqual(indexOf('Blue Whale', ''), 'Blue Whale'.indexOf('Blue', ''))
     assert.strictEqual(indexOf('Blue Whale', '', 9), 'Blue Whale'.indexOf('', 9))
     assert.strictEqual(indexOf('Blue Whale', '', 10), 'Blue Whale'.indexOf('', 10))
