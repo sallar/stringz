@@ -131,3 +131,58 @@ export function limit (str, limit = 16, padString = '#', padPosition = 'right') 
 
   return str
 }
+
+/**
+ * Returns the index of the first occurrence of a given string
+ *
+ * @export
+ * @param {string} str
+ * @param {string} [searchStr] the string to search
+ * @param {number} [pos] starting position
+ * @returns {number}
+ */
+export function indexOf (str, searchStr, pos) {
+  if (typeof str !== 'string') {
+    throw new Error('Input must be a string')
+  }
+
+  if (str === '') {
+    if (searchStr === '') {
+      return 0
+    }
+    return -1
+  }
+
+  // fix type
+  pos = parseInt(pos, 10)
+  pos = isNaN(pos) ? 0 : pos
+  searchStr = String(searchStr)
+
+  const strArr = str.match(astralRange)
+  if (pos >= strArr.length) {
+    if (searchStr === '') {
+      return strArr.length
+    }
+    return -1
+  }
+  if (searchStr === '') {
+    return pos
+  }
+
+  const searchArr = searchStr.match(astralRange)
+  let finded = false
+  let index
+  for (index = pos; index < strArr.length; index += 1) {
+    let searchIndex = 0
+    while (searchIndex < searchArr.length &&
+      searchArr[searchIndex] === strArr[index + searchIndex]) {
+      searchIndex += 1
+    }
+    if (searchIndex === searchArr.length &&
+      searchArr[searchIndex - 1] === strArr[index + searchIndex - 1]) {
+      finded = true
+      break
+    }
+  }
+  return finded ? index : -1
+}
