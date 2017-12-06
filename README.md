@@ -36,7 +36,8 @@ import * as stringz from "stringz"; // OR:
 import { limit, substring, length, substr } from "stringz";
 
 // CommonJS
-var stringz = require("stringz");
+const stringz = require("stringz"); // OR:
+const { limit, substr } = require("stringz");
 // use like: stringz.limit ...
 ```
 
