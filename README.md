@@ -34,11 +34,12 @@ And import it in your awesome node app:
 // ES2015+
 import * as stringz from "stringz"; // OR:
 import { limit, substring, length, substr } from "stringz";
+```
 
+```javascript
 // CommonJS
 const stringz = require("stringz"); // OR:
 const { limit, substr } = require("stringz");
-// use like: stringz.limit ...
 ```
 
 ## Usage
