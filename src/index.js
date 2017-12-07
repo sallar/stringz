@@ -1,4 +1,4 @@
-import { astralRange } from './string'
+import { astralRange } from './string';
 
 /**
  * Returns the length of a string
@@ -7,14 +7,14 @@ import { astralRange } from './string'
  * @param {string} str
  * @returns {number}
  */
-export function length (str) {
+export function length(str) {
   // Check for input
   if (typeof str !== 'string') {
-    throw new Error('Input must be a string')
+    throw new Error('Input must be a string');
   }
 
-  const match = str.match(astralRange)
-  return (match === null) ? 0 : match.length
+  const match = str.match(astralRange);
+  return match === null ? 0 : match.length;
 }
 
 /**
@@ -26,22 +26,25 @@ export function length (str) {
  * @param {number} end End position
  * @returns {string}
  */
-export function substring (str, begin = 0, end) {
+export function substring(str, begin = 0, end) {
   // Check for input
   if (typeof str !== 'string') {
-    throw new Error('Input must be a string')
+    throw new Error('Input must be a string');
   }
 
   // Even though negative numbers work here, theyre not in the spec
   if (typeof begin !== 'number' || begin < 0) {
-    begin = 0
+    begin = 0;
   }
 
   if (typeof end === 'number' && end < 0) {
-    end = 0
+    end = 0;
   }
 
-  return str.match(astralRange).slice(begin, end).join('')
+  return str
+    .match(astralRange)
+    .slice(begin, end)
+    .join('');
 }
 
 /**
@@ -53,43 +56,46 @@ export function substring (str, begin = 0, end) {
  * @param {number} len Desired length
  * @returns {string}
  */
-export function substr (str, begin = 0, len) {
+export function substr(str, begin = 0, len) {
   // Check for input
   if (typeof str !== 'string') {
-    throw new Error('Input must be a string')
+    throw new Error('Input must be a string');
   }
 
-  const strLength = length(str)
+  const strLength = length(str);
 
   // Fix type
   if (typeof begin !== 'number') {
-    begin = parseInt(begin, 10)
+    begin = parseInt(begin, 10);
   }
 
   // Return zero-length string if got oversize number.
   if (begin >= strLength) {
-    return ''
+    return '';
   }
 
   // Calculating postive version of negative value.
   if (begin < 0) {
-    begin += strLength
+    begin += strLength;
   }
 
-  let end
+  let end;
 
   if (typeof len === 'undefined') {
-    end = strLength
+    end = strLength;
   } else {
     // Fix type
     if (typeof len !== 'number') {
-      len = parseInt(len, 10)
+      len = parseInt(len, 10);
     }
 
-    end = (len >= 0) ? len + begin : begin
+    end = len >= 0 ? len + begin : begin;
   }
 
-  return str.match(astralRange).slice(begin, end).join('')
+  return str
+    .match(astralRange)
+    .slice(begin, end)
+    .join('');
 }
 
 /**
@@ -103,33 +109,33 @@ export function substr (str, begin = 0, len) {
  * @param {string} [padPosition='right'] The Pad Position
  * @returns {string}
  */
-export function limit (str, limit = 16, padString = '#', padPosition = 'right') {
+export function limit(str, limit = 16, padString = '#', padPosition = 'right') {
   // Input should be a string, limit should be a number
   if (typeof str !== 'string' || typeof limit !== 'number') {
-    throw new Error('Invalid arguments specified')
+    throw new Error('Invalid arguments specified');
   }
 
   // Pad position should be either left or right
   if (['left', 'right'].indexOf(padPosition) === -1) {
-    throw new Error('Pad position should be either left or right')
+    throw new Error('Pad position should be either left or right');
   }
 
   // Pad string can be anything, we convert it to string
   if (typeof padString !== 'string') {
-    padString = String(padString)
+    padString = String(padString);
   }
 
   // Calculate string length considering astral code points
-  const strLength = length(str)
+  const strLength = length(str);
 
   if (strLength > limit) {
-    return substring(str, 0, limit)
+    return substring(str, 0, limit);
   } else if (strLength < limit) {
-    const padRepeats = padString.repeat(limit - strLength)
-    return (padPosition === 'left') ? padRepeats + str : str + padRepeats
+    const padRepeats = padString.repeat(limit - strLength);
+    return padPosition === 'left' ? padRepeats + str : str + padRepeats;
   }
 
-  return str
+  return str;
 }
 
 /**
@@ -141,48 +147,52 @@ export function limit (str, limit = 16, padString = '#', padPosition = 'right') 
  * @param {number} [pos] starting position
  * @returns {number}
  */
-export function indexOf (str, searchStr, pos) {
+export function indexOf(str, searchStr, pos) {
   if (typeof str !== 'string') {
-    throw new Error('Input must be a string')
+    throw new Error('Input must be a string');
   }
 
   if (str === '') {
     if (searchStr === '') {
-      return 0
+      return 0;
     }
-    return -1
+    return -1;
   }
 
   // fix type
-  pos = parseInt(pos, 10)
-  pos = isNaN(pos) ? 0 : pos
-  searchStr = String(searchStr)
+  pos = parseInt(pos, 10);
+  pos = isNaN(pos) ? 0 : pos;
+  searchStr = String(searchStr);
 
-  const strArr = str.match(astralRange)
+  const strArr = str.match(astralRange);
   if (pos >= strArr.length) {
     if (searchStr === '') {
-      return strArr.length
+      return strArr.length;
     }
-    return -1
+    return -1;
   }
   if (searchStr === '') {
-    return pos
+    return pos;
   }
 
-  const searchArr = searchStr.match(astralRange)
-  let finded = false
-  let index
+  const searchArr = searchStr.match(astralRange);
+  let finded = false;
+  let index;
   for (index = pos; index < strArr.length; index += 1) {
-    let searchIndex = 0
-    while (searchIndex < searchArr.length &&
-      searchArr[searchIndex] === strArr[index + searchIndex]) {
-      searchIndex += 1
+    let searchIndex = 0;
+    while (
+      searchIndex < searchArr.length &&
+      searchArr[searchIndex] === strArr[index + searchIndex]
+    ) {
+      searchIndex += 1;
     }
-    if (searchIndex === searchArr.length &&
-      searchArr[searchIndex - 1] === strArr[index + searchIndex - 1]) {
-      finded = true
-      break
+    if (
+      searchIndex === searchArr.length &&
+      searchArr[searchIndex - 1] === strArr[index + searchIndex - 1]
+    ) {
+      finded = true;
+      break;
     }
   }
-  return finded ? index : -1
+  return finded ? index : -1;
 }
