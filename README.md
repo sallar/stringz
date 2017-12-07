@@ -14,8 +14,6 @@ incorrect. This library tries to tackle all these problems with a mega RegExp.
 🎈 Based on a RegExp copied from the [Lodash](https://github.com/lodash/lodash)
 library.
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
 ## Features
 
 * Unicode-aware string manipulation tools
@@ -32,14 +30,14 @@ And import it in your awesome node app:
 
 ```javascript
 // ES2015+
-import * as stringz from "stringz"; // OR:
-import { limit, substring, length, substr } from "stringz";
+import * as stringz from 'stringz'; // OR:
+import { limit, substring, length, substr } from 'stringz';
 ```
 
 ```javascript
 // CommonJS
-const stringz = require("stringz"); // OR:
-const { limit, substr } = require("stringz");
+const stringz = require('stringz'); // OR:
+const { limit, substr } = require('stringz');
 ```
 
 ## Usage
@@ -65,15 +63,15 @@ const { limit, substr } = require("stringz");
 
 ```javascript
 // Truncate:
-limit("Life’s like a box of chocolates.", 20); // "Life's like a box of"
+limit('Life’s like a box of chocolates.', 20); // "Life's like a box of"
 
 // Pad:
-limit("Make emojis great again", 26, "💩"); // "Make emojis great again💩💩💩"
-limit("What are you looking at?", 30, "+", "left"); // "++++++What are you looking at?"
+limit('Make emojis great again', 26, '💩'); // "Make emojis great again💩💩💩"
+limit('What are you looking at?', 30, '+', 'left'); // "++++++What are you looking at?"
 
 // Unicode Aware:
-limit("🤔🤔🤔", 2); // "🤔🤔"
-limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽"
+limit('🤔🤔🤔', 2); // "🤔🤔"
+limit('👍🏽👍🏽', 4, '👍🏽'); // "👍🏽👍🏽👍🏽👍🏽"
 ```
 
 ### String Length
@@ -87,7 +85,7 @@ limit("👍🏽👍🏽", 4, "👍🏽"); // "👍🏽👍🏽👍🏽👍🏽"
 #### Examples
 
 ```javascript
-length("Iñtërnâtiônàlizætiøn☃💩"); // 22
+length('Iñtërnâtiônàlizætiøn☃💩'); // 22
 ```
 
 ### Substring
@@ -103,7 +101,7 @@ length("Iñtërnâtiônàlizætiøn☃💩"); // 22
 #### Examples
 
 ```javascript
-substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍🏽 are 🍆"
+substring('Emojis 👍🏽 are 🍆 poison. 🌮s are bad.', 7, 14); // "👍🏽 are 🍆"
 ```
 
 ### Substr
@@ -119,7 +117,7 @@ substring("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", 7, 14); // "👍�
 #### Examples
 
 ```javascript
-substr("A.C. Milan 🇮🇹⚽️", 5, 7); // "Milan 🇮🇹"
+substr('A.C. Milan 🇮🇹⚽️', 5, 7); // "Milan 🇮🇹"
 ```
 
 ### IndexOf
@@ -135,8 +133,8 @@ substr("A.C. Milan 🇮🇹⚽️", 5, 7); // "Milan 🇮🇹"
 #### Examples
 
 ```javascript
-indexOf("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", "are"); // 9
-indexOf("Emojis 👍🏽 are 🍆 poison. 🌮s are bad.", "are", 10); // 26
+indexOf('Emojis 👍🏽 are 🍆 poison. 🌮s are bad.', 'are'); // 9
+indexOf('Emojis 👍🏽 are 🍆 poison. 🌮s are bad.', 'are', 10); // 26
 ```
 
 ## Test
