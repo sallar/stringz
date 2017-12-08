@@ -1,6 +1,6 @@
 {
   "name": "stringz",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Zero-dependency unicode-aware string tools",
   "main": "dist/index.js",
   "types": "./index.d.ts",
@@ -13,7 +13,10 @@
     "prepublish": "babel src --out-dir dist"
   },
   "lint-staged": {
-    "{src,test,benchmark}/**/*.js": ["prettier --write", "git add"]
+    "{src,test,benchmark}/**/*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
