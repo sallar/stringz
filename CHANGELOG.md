@@ -2,6 +2,7 @@
 
 | Version | Date       | Notes                                                               |
 | ------- | ---------- | ------------------------------------------------------------------- |
+| 0.4.0   | 2017-11-29 | [New `toArray` function](https://github.com/sallar/stringz/pull/24) |
 | 0.3.0   | 2017-11-29 | [New `indexOf` function](https://github.com/sallar/stringz/pull/22) |
 | 0.2.3   | 2017-09-19 | Add `.babelrc` to `.gitignore`                                      |
 | 0.2.2   | 2017-06-20 | Fix Typescript Definition Issue #14                                 |
