@@ -1,6 +1,18 @@
 import { astralRange } from './string';
 
 /**
+ * Converts a string to an array of string chars
+ * @param {string} str The string to turn into array
+ * @returns {string[]}
+ */
+export function toArray(str) {
+  if (typeof str !== 'string') {
+    throw new Error('A string is expected as input');
+  }
+  return str.match(astralRange) || [];
+}
+
+/**
  * Returns the length of a string
  *
  * @export
