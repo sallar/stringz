@@ -47,6 +47,7 @@ const { limit, substr } = require('stringz');
 * [`substring()`](#substring)
 * [`substr()`](#substr)
 * [`indexOf()`](#indexof)
+* [`toArray()`](#toarray)
 
 ### Limit String to Width
 
@@ -135,6 +136,20 @@ substr('A.C. Milan 🇮🇹⚽️', 5, 7); // "Milan 🇮🇹"
 ```javascript
 indexOf('Emojis 👍🏽 are 🍆 poison. 🌮s are bad.', 'are'); // 9
 indexOf('Emojis 👍🏽 are 🍆 poison. 🌮s are bad.', 'are', 10); // 26
+```
+
+### ToArray
+
+    function toArray(str)
+
+| Param | Type                | Default | Description                |
+| ----- | ------------------- | ------- | -------------------------- |
+| str   | <code>String</code> | _none_  | String to convert to array |
+
+#### Examples
+
+```javascript
+indexOf('👍🏽🍆🌮'); // ['👍🏽', '🍆', '🌮']
 ```
 
 ## Test
