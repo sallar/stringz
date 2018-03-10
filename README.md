@@ -149,7 +149,7 @@ indexOf('Emojis 👍🏽 are 🍆 poison. 🌮s are bad.', 'are', 10); // 26
 #### Examples
 
 ```javascript
-indexOf('👍🏽🍆🌮'); // ['👍🏽', '🍆', '🌮']
+toArray('👍🏽🍆🌮'); // ['👍🏽', '🍆', '🌮']
 ```
 
 ## Test
