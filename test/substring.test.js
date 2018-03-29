@@ -20,6 +20,10 @@ describe('Substring', () => {
     assert.strictEqual(substring(emojiString, 7, 14), '👍🏽 are 🍆');
   });
 
+  it('Substrings empty text correctly', () => {
+    assert.strictEqual(substring('', 0, 11), '');
+  });
+
   it('Substrings if arguments are unspecified', () => {
     assert.strictEqual(substring(string, 10), string.substring(10));
     assert.strictEqual(substring(string), string);
