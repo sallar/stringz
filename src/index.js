@@ -53,10 +53,10 @@ export function substring(str, begin = 0, end) {
     end = 0;
   }
 
-  return str
-    .match(astralRange)
-    .slice(begin, end)
-    .join('');
+  const match = str.match(astralRange);
+  if (!match) return '';
+
+  return match.slice(begin, end).join('');
 }
 
 /**
@@ -104,10 +104,10 @@ export function substr(str, begin = 0, len) {
     end = len >= 0 ? len + begin : begin;
   }
 
-  return str
-    .match(astralRange)
-    .slice(begin, end)
-    .join('');
+  const match = str.match(astralRange);
+  if (!match) return '';
+
+  return match.slice(begin, end).join('');
 }
 
 /**

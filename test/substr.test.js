@@ -17,6 +17,10 @@ describe('Substr', () => {
     assert.strictEqual(substr(emojiString, 7, 7), '👍🏽 are 🍆');
   });
 
+  it('Substrs empty text correctly', () => {
+    assert.strictEqual(substr('', 0, 11), '');
+  });
+
   it('Substrs if arguments are unspecified', () => {
     assert.strictEqual(substr(string, 10), string.substr(10));
     assert.strictEqual(substr(string, 120), string.substr(120));
