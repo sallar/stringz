@@ -1,6 +1,6 @@
 {
   "name": "stringz",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Zero-dependency unicode-aware string tools",
   "main": "dist/index.js",
   "types": "./index.d.ts",
