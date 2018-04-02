@@ -2,7 +2,7 @@
 
 | Version | Date       | Notes                                                               |
 | ------- | ---------- | ------------------------------------------------------------------- |
-| 0.4.0   | 2017-12-08 | Move the astral regex to it's own package                           |
+| 1.0.0   | 2018-04-02 | Move the astral regex to it's own package                           |
 | 0.4.0   | 2017-12-08 | [New `toArray` function](https://github.com/sallar/stringz/pull/24) |
 | 0.3.0   | 2017-11-29 | [New `indexOf` function](https://github.com/sallar/stringz/pull/22) |
 | 0.2.3   | 2017-09-19 | Add `.babelrc` to `.gitignore`                                      |
