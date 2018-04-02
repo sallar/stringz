@@ -1,6 +1,6 @@
 # Stringz [![Build Status](https://travis-ci.org/sallar/stringz.svg?branch=master)](https://travis-ci.org/sallar/stringz) [![codecov](https://codecov.io/gh/sallar/stringz/branch/master/graph/badge.svg)](https://codecov.io/gh/sallar/stringz) [![npm](https://img.shields.io/npm/dm/stringz.svg)](https://www.npmjs.com/package/stringz)
 
-A really small, performant, zero-dependency, unicode-aware library for working
+A really small, performant, unicode-aware library for working
 with Strings in Node.js.
 
 Javascript has a serious problem with unicode. Even ES6 can’t solve the problem
@@ -18,7 +18,6 @@ library.
 
 * Unicode-aware string manipulation tools
 * High performance
-* Zero dependencies
 
 ## Install
 

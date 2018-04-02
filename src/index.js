@@ -1,4 +1,4 @@
-import { astralRange } from './string';
+import astralRange from 'unicode-astral-regex';
 
 /**
  * Converts a string to an array of string chars
