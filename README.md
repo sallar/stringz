@@ -66,7 +66,7 @@ const { limit, substr } = require('stringz');
 limit('Life’s like a box of chocolates.', 20); // "Life's like a box of"
 
 // Pad:
-limit('Make emojis great again', 26, '💩'); // "Make emojis great again💩💩💩"
+limit('Everybody loves emojis!', 26, '💩'); // "Everybody loves emojis!💩💩💩"
 limit('What are you looking at?', 30, '+', 'left'); // "++++++What are you looking at?"
 
 // Unicode Aware:
