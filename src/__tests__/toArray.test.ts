@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { toArray } from '../src/index';
+import { toArray } from '..';
 
 describe('Convert String to Array', () => {
   it('Converts a simple string to array', () => {
@@ -32,8 +32,11 @@ describe('Convert String to Array', () => {
     ]);
   });
   it('Throws an error for non-strings', () => {
+    // @ts-ignore
     assert.throws(() => toArray({}), Error);
+    // @ts-ignore
     assert.throws(() => toArray(1), Error);
+    // @ts-ignore
     assert.throws(() => toArray(null), Error);
   });
   it('Converts empty string to empty array', () => {

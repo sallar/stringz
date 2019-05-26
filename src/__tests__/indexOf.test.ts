@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { indexOf } from '../src/index';
+import { indexOf } from '..';
 
 describe('IndexOf', () => {
   it('Behaves same with String.prototype.indexOf', () => {
@@ -29,6 +29,7 @@ describe('IndexOf', () => {
     );
     assert.strictEqual(
       indexOf('Blue Whale', ''),
+      // @ts-ignore
       'Blue Whale'.indexOf('Blue', '')
     );
     assert.strictEqual(
@@ -64,20 +65,27 @@ describe('IndexOf', () => {
 
   it('Indexof unexpected arguments type correctly', () => {
     assert.strictEqual(
+      // @ts-ignore
       indexOf('Blue Whale', null),
+      // @ts-ignore
       'Blue Whale'.indexOf(null, '')
     );
     assert.strictEqual(
+      // @ts-ignore
       indexOf('Blue undefined Whale', undefined),
+      // @ts-ignore
       'Blue undefined Whale'.indexOf(undefined)
     );
     assert.strictEqual(
+      // @ts-ignore
       indexOf('Blue Whale', 'Whale', Object),
+      // @ts-ignore
       'Blue Whale'.indexOf('Whale', Object)
     );
   });
 
   it('Throws an error if wrong arguments are specified.', () => {
+    // @ts-ignore
     assert.throws(() => indexOf(1212), Error);
   });
 });

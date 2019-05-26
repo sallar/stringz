@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { length } from '../src/index';
+import { length } from '..';
 
 describe('Count String Length', () => {
   it('Counts international strings correctly', () => {
@@ -21,6 +21,7 @@ describe('Count String Length', () => {
   });
 
   it('Throws an error if wrong arguments are specified.', () => {
+    // @ts-ignore
     assert.throws(() => length(445), Error);
   });
 });
