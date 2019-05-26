@@ -8,7 +8,7 @@
     "test": "jest --coverage",
     "format": "prettier --write '{src,test,benchmark}/**/*.{js,ts}'",
     "lint": "prettier-check '{src,test,benchmark}/**/*.{js,ts}'",
-    "nyc-report": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "nyc-report": "codecov",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
     "build": "tsc"
