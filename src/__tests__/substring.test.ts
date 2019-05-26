@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { substring } from '../src/index';
+import { substring } from '..';
 
 describe('Substring', () => {
   const string =
@@ -25,16 +25,20 @@ describe('Substring', () => {
   });
 
   it('Substrings if arguments are unspecified', () => {
+    // @ts-ignore
     assert.strictEqual(substring(string, 10), string.substring(10));
+    // @ts-ignore
     assert.strictEqual(substring(string), string);
   });
 
   it('Substrings even with negative arguments', () => {
+    // @ts-ignore
     assert.strictEqual(substring(string, -10), string.substring(-10));
     assert.strictEqual(substring(string, -10, -10), string.substring(-10, -10));
   });
 
   it('Throws an error if wrong arguments are specified.', () => {
+    // @ts-ignore
     assert.throws(() => substring(12, 1, 2), Error);
   });
 });

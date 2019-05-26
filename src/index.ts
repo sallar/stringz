@@ -1,3 +1,4 @@
+// @ts-ignore
 import astralRange from 'unicode-astral-regex';
 
 /**
@@ -5,7 +6,7 @@ import astralRange from 'unicode-astral-regex';
  * @param {string} str The string to turn into array
  * @returns {string[]}
  */
-export function toArray(str) {
+export function toArray(str: string): string[] {
   if (typeof str !== 'string') {
     throw new Error('A string is expected as input');
   }
@@ -19,7 +20,7 @@ export function toArray(str) {
  * @param {string} str
  * @returns {number}
  */
-export function length(str) {
+export function length(str: string): number {
   // Check for input
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
@@ -38,7 +39,11 @@ export function length(str) {
  * @param {number} end End position
  * @returns {string}
  */
-export function substring(str, begin = 0, end) {
+export function substring(
+  str: string,
+  begin: number = 0,
+  end?: number
+): string {
   // Check for input
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
@@ -68,7 +73,7 @@ export function substring(str, begin = 0, end) {
  * @param {number} len Desired length
  * @returns {string}
  */
-export function substr(str, begin = 0, len) {
+export function substr(str: string, begin: number = 0, len?: number): string {
   // Check for input
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
@@ -121,7 +126,12 @@ export function substr(str, begin = 0, len) {
  * @param {string} [padPosition='right'] The Pad Position
  * @returns {string}
  */
-export function limit(str, limit = 16, padString = '#', padPosition = 'right') {
+export function limit(
+  str: string,
+  limit: number = 16,
+  padString: string = '#',
+  padPosition: string = 'right'
+): string {
   // Input should be a string, limit should be a number
   if (typeof str !== 'string' || typeof limit !== 'number') {
     throw new Error('Invalid arguments specified');
@@ -159,7 +169,11 @@ export function limit(str, limit = 16, padString = '#', padPosition = 'right') {
  * @param {number} [pos] starting position
  * @returns {number}
  */
-export function indexOf(str, searchStr, pos) {
+export function indexOf(
+  str: string,
+  searchStr: string,
+  pos: number = 0
+): number {
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
   }
@@ -172,11 +186,11 @@ export function indexOf(str, searchStr, pos) {
   }
 
   // fix type
-  pos = parseInt(pos, 10);
+  pos = Number(pos);
   pos = isNaN(pos) ? 0 : pos;
   searchStr = String(searchStr);
 
-  const strArr = str.match(astralRange);
+  const strArr = toArray(str);
   if (pos >= strArr.length) {
     if (searchStr === '') {
       return strArr.length;
@@ -187,7 +201,7 @@ export function indexOf(str, searchStr, pos) {
     return pos;
   }
 
-  const searchArr = searchStr.match(astralRange);
+  const searchArr = toArray(searchStr);
   let finded = false;
   let index;
   for (index = pos; index < strArr.length; index += 1) {
