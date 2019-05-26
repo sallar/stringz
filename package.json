@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Zero-dependency unicode-aware string tools",
   "main": "dist/index.js",
-  "types": "./index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/index.d.ts.map"
+  ],
   "scripts": {
     "test": "jest --coverage",
     "format": "prettier --write '{src,test,benchmark}/**/*.{js,ts}'",

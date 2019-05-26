@@ -2,3 +2,7 @@ test
 src
 benchmark
 .babelrc
+dist/__tests__
+coverage
+.nyc_output
+

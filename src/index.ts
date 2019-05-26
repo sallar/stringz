@@ -39,7 +39,11 @@ export function length(str: string): number {
  * @param {number} end End position
  * @returns {string}
  */
-export function substring(str: string, begin: number = 0, end: number): string {
+export function substring(
+  str: string,
+  begin: number = 0,
+  end?: number
+): string {
   // Check for input
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
@@ -69,7 +73,7 @@ export function substring(str: string, begin: number = 0, end: number): string {
  * @param {number} len Desired length
  * @returns {string}
  */
-export function substr(str: string, begin: number = 0, len: number): string {
+export function substr(str: string, begin: number = 0, len?: number): string {
   // Check for input
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
