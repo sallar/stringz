@@ -1,5 +1,5 @@
 // @ts-ignore
-import astralRange from 'unicode-astral-regex';
+import charRegex from 'char-regex';
 
 /**
  * Converts a string to an array of string chars
@@ -10,7 +10,7 @@ export function toArray(str: string): string[] {
   if (typeof str !== 'string') {
     throw new Error('A string is expected as input');
   }
-  return str.match(astralRange) || [];
+  return str.match(charRegex()) || [];
 }
 
 /**
@@ -26,7 +26,7 @@ export function length(str: string): number {
     throw new Error('Input must be a string');
   }
 
-  const match = str.match(astralRange);
+  const match = str.match(charRegex());
   return match === null ? 0 : match.length;
 }
 
@@ -58,7 +58,7 @@ export function substring(
     end = 0;
   }
 
-  const match = str.match(astralRange);
+  const match = str.match(charRegex());
   if (!match) return '';
 
   return match.slice(begin, end).join('');
@@ -109,7 +109,7 @@ export function substr(str: string, begin: number = 0, len?: number): string {
     end = len >= 0 ? len + begin : begin;
   }
 
-  const match = str.match(astralRange);
+  const match = str.match(charRegex());
   if (!match) return '';
 
   return match.slice(begin, end).join('');
