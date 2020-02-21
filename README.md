@@ -11,9 +11,6 @@ but that even fails: `Array.from("👍🏽")` returns `["👍", "🏽"]` which i
 incorrect. This library tries to tackle all these problems with a mega RegExp.
 [Read More Here](https://mathiasbynens.be/notes/javascript-unicode).
 
-🎈 Based on a RegExp copied from the [Lodash](https://github.com/lodash/lodash)
-library.
-
 ## Features
 
 * Unicode-aware string manipulation tools
@@ -187,7 +184,3 @@ $ node run.js
 
 This software is released under the
 [MIT License](http://sallar.mit-license.org/).
-
-Uses a RegExp from the [Lodash](https://github.com/lodash/lodash) which is
-released under the
-[MIT License](https://raw.githubusercontent.com/lodash/lodash/4.14.1/LICENSE).
