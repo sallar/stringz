@@ -2,6 +2,7 @@
 
 | Version | Date       | Notes                                                               |
 | ------- | ---------- | ------------------------------------------------------------------- |
+| 2.1.0   | 2020-02-21 | Use new RegEx library to fix some counting issues                   |
 | 2.0.0   | 2019-05-26 | Refactor to Typescript and remove Node 4 & 5 support - BREAKING     |
 | 1.0.0   | 2018-04-02 | Move the astral regex to it's own package                           |
 | 0.4.0   | 2017-12-08 | [New `toArray` function](https://github.com/sallar/stringz/pull/24) |
