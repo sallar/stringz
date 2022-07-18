@@ -1,5 +1,4 @@
-// @ts-ignore
-import charRegex from 'char-regex';
+import splitChars from 'split-chars';
 
 /**
  * Converts a string to an array of string chars
@@ -10,7 +9,7 @@ export function toArray(str: string): string[] {
   if (typeof str !== 'string') {
     throw new Error('A string is expected as input');
   }
-  return str.match(charRegex()) || [];
+  return [...splitChars(str)];
 }
 
 /**
@@ -26,8 +25,7 @@ export function length(str: string): number {
     throw new Error('Input must be a string');
   }
 
-  const match = str.match(charRegex());
-  return match === null ? 0 : match.length;
+  return [...splitChars(str)].length;
 }
 
 /**
@@ -42,7 +40,7 @@ export function length(str: string): number {
 export function substring(
   str: string,
   begin: number = 0,
-  end?: number
+  end: number = Infinity
 ): string {
   // Check for input
   if (typeof str !== 'string') {
@@ -58,10 +56,29 @@ export function substring(
     end = 0;
   }
 
-  const match = str.match(charRegex());
-  if (!match) return '';
+  const charIter = splitChars(str)[Symbol.iterator]();
 
-  return match.slice(begin, end).join('');
+  for (let num = 0; num < begin; num++) {
+    const { done } = charIter.next();
+
+    if (done) {
+      return '';
+    }
+  }
+
+  let result = '';
+
+  for (let num = 0; num < end! - begin; num++) {
+    const { value, done } = charIter.next();
+
+    if (done) {
+      break;
+    }
+
+    result += value;
+  }
+
+  return result;
 }
 
 /**
@@ -73,17 +90,22 @@ export function substring(
  * @param {number} len Desired length
  * @returns {string}
  */
-export function substr(str: string, begin: number = 0, len?: number): string {
+export function substr(
+  str: string,
+  begin: number | undefined = 0,
+  len?: number
+): string {
   // Check for input
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
   }
 
-  const strLength = length(str);
+  const chars = toArray(str);
+  const strLength = chars.length;
 
   // Fix type
   if (typeof begin !== 'number') {
-    begin = parseInt(begin, 10);
+    begin = Number.parseInt(begin, 10);
   }
 
   // Return zero-length string if got oversize number.
@@ -103,16 +125,13 @@ export function substr(str: string, begin: number = 0, len?: number): string {
   } else {
     // Fix type
     if (typeof len !== 'number') {
-      len = parseInt(len, 10);
+      len = Number.parseInt(len, 10);
     }
 
     end = len >= 0 ? len + begin : begin;
   }
 
-  const match = str.match(charRegex());
-  if (!match) return '';
-
-  return match.slice(begin, end).join('');
+  return chars.slice(begin, end).join('');
 }
 
 /**
@@ -130,7 +149,7 @@ export function limit(
   str: string,
   limit: number = 16,
   padString: string = '#',
-  padPosition: string = 'right'
+  padPosition: 'left' | 'right' = 'right'
 ): string {
   // Input should be a string, limit should be a number
   if (typeof str !== 'string' || typeof limit !== 'number') {
@@ -148,12 +167,13 @@ export function limit(
   }
 
   // Calculate string length considering astral code points
-  const strLength = length(str);
+  const chars = toArray(str);
+  const strLength = chars.length;
 
   if (strLength > limit) {
-    return substring(str, 0, limit);
+    return chars.slice(0, limit).join('');
   } else if (strLength < limit) {
-    const padRepeats = padString.repeat(limit - strLength);
+    const padRepeats = (padString as string).repeat(limit - strLength);
     return padPosition === 'left' ? padRepeats + str : str + padRepeats;
   }
 
@@ -202,23 +222,16 @@ export function indexOf(
   }
 
   const searchArr = toArray(searchStr);
-  let finded = false;
-  let index;
-  for (index = pos; index < strArr.length; index += 1) {
-    let searchIndex = 0;
-    while (
-      searchIndex < searchArr.length &&
-      searchArr[searchIndex] === strArr[index + searchIndex]
-    ) {
-      searchIndex += 1;
+
+  search: for (let startIndex = pos; startIndex < strArr.length; startIndex++) {
+    for (let searchIndex = 0; searchIndex < searchArr.length; searchIndex++) {
+      if (strArr[startIndex + searchIndex] !== searchArr[searchIndex]) {
+        continue search;
+      }
     }
-    if (
-      searchIndex === searchArr.length &&
-      searchArr[searchIndex - 1] === strArr[index + searchIndex - 1]
-    ) {
-      finded = true;
-      break;
-    }
+
+    return startIndex;
   }
-  return finded ? index : -1;
+
+  return -1;
 }

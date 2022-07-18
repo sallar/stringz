@@ -10,26 +10,26 @@ const str = 'Iñtërnâtiônàlizætiøn☃👍🏽💩😊💪🏼😻';
 
 // add tests
 suite
-  .add('Stringz .length (accruate)', function() {
+  .add('Stringz .length (accurate)', function () {
     return Stringz.length(str);
   })
-  .add('Lodash .toArray (accruate)', function() {
+  .add('Lodash .toArray (accurate)', function () {
     return _.toArray(str).length;
   })
-  .add('Emoji Aware .split (inaccurate)', function() {
+  .add('Emoji Aware .split (inaccurate)', function () {
     return EmojiAware.split(str).length;
   })
-  .add('Spliddit .length (inaccurate)', function() {
+  .add('Spliddit .length (inaccurate)', function () {
     return Spliddit(str).length;
   })
-  .add('UTF8 Length (inaccurate)', function() {
+  .add('UTF8 Length (inaccurate)', function () {
     return Bytes(str);
   })
   // add listeners
-  .on('cycle', function(event) {
+  .on('cycle', function (event) {
     console.log(String(event.target));
   })
-  .on('complete', function() {
+  .on('complete', function () {
     console.log('Fastest is ' + this.filter('fastest').map('name'));
   })
   // run async

@@ -56,6 +56,7 @@ describe('Limit String Length', () => {
     assert.throws(() => limit(12), Error);
     // @ts-ignore
     assert.throws(() => limit('abc', 'abc'), Error);
+    // @ts-ignore
     assert.throws(() => limit('abc', 10, '#', 'mongo'), Error);
   });
 });
