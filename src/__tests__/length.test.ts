@@ -20,6 +20,10 @@ describe('Count String Length', () => {
     assert.strictEqual(length('👍🏽💩😊💪🏼😻'), 5);
   });
 
+  it('Counts zalgo', () => {
+    assert.strictEqual(length('Z͑ͫ̓ͪ̂ͫ̽͏̴̙̤̞͉͚̯̞̠͍A̴̵̜̰͔ͫ͗͢L̠ͨͧͩ͘G̴̻͈͍͔̹̑͗̎̅͛́Ǫ̵̹̻̝̳͂̌̌͘!͖̬̰̙̗̿̋ͥͥ̂ͣ̐́́͜͞'), 6);
+  });
+
   it('Throws an error if wrong arguments are specified.', () => {
     // @ts-ignore
     assert.throws(() => length(445), Error);

@@ -22,6 +22,7 @@ describe('Substring', () => {
 
   it('Substrings empty text correctly', () => {
     assert.strictEqual(substring('', 0, 11), '');
+    assert.strictEqual(substring('', 1, 11), '');
   });
 
   it('Substrings if arguments are unspecified', () => {
