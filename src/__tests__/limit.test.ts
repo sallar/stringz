@@ -44,10 +44,24 @@ describe('Limit String Length', () => {
     );
   });
 
+  it('Uses custom multi-character padding if provided', () => {
+    assert.equal(
+      limit("Life's like a box of chocolates.", 35, '+-'),
+      "Life's like a box of chocolates.+-+"
+    );
+  });
+
   it('Applies padding to correct position if specified', () => {
     assert.equal(
       limit("Life's like a box of chocolates.", 35, '/', 'left'),
       "///Life's like a box of chocolates."
+    );
+  });
+
+  it('Applies multi-character padding to correct position if specified', () => {
+    assert.equal(
+      limit("Life's like a box of chocolates.", 35, '+-', 'left'),
+      "+-+Life's like a box of chocolates."
     );
   });
 
