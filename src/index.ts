@@ -153,7 +153,10 @@ export function limit(
   if (strLength > limit) {
     return substring(str, 0, limit);
   } else if (strLength < limit) {
-    const padRepeats = padString.repeat(limit - strLength);
+    const padLength = limit - strLength;
+    const padRepeats = padString
+      .repeat(Math.ceil(padLength / padString.length))
+      .slice(0, padLength);
     return padPosition === 'left' ? padRepeats + str : str + padRepeats;
   }
 
