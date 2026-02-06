@@ -2,6 +2,24 @@
 import charRegex from 'char-regex';
 
 /**
+ * Performance-enhanced version of Array.prototype.join()
+ * 
+ * @param {string[]} arr
+ * @returns {string}
+ * @todo What defines a "large" string?
+ */
+function join(arr: string[], seperator: string = '') {
+  let result = '';
+  for (var i = 0; i < arr.length; i++) {
+    if (result) {
+      result += seperator;
+    }
+    result += arr[i];
+  }
+  return result;
+}
+
+/**
  * Converts a string to an array of string chars
  * @param {string} str The string to turn into array
  * @returns {string[]}
@@ -61,7 +79,7 @@ export function substring(
   const match = str.match(charRegex());
   if (!match) return '';
 
-  return match.slice(begin, end).join('');
+  return join(match.slice(begin, end))
 }
 
 /**
@@ -112,7 +130,7 @@ export function substr(str: string, begin: number = 0, len?: number): string {
   const match = str.match(charRegex());
   if (!match) return '';
 
-  return match.slice(begin, end).join('');
+  return join(match.slice(begin, end))
 }
 
 /**
