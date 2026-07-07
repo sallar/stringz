@@ -5,44 +5,44 @@ describe('IndexOf', () => {
   it('Behaves same with String.prototype.indexOf', () => {
     assert.strictEqual(
       indexOf('Blue Whale', 'Blue'),
-      'Blue Whale'.indexOf('Blue')
+      'Blue Whale'.indexOf('Blue'),
     );
     assert.strictEqual(
       indexOf('Blue Whale', 'Blute'),
-      'Blue Whale'.indexOf('Blute')
+      'Blue Whale'.indexOf('Blute'),
     );
     assert.strictEqual(
       indexOf('Blue Whale', 'Whale', 0),
-      'Blue Whale'.indexOf('Whale', 0)
+      'Blue Whale'.indexOf('Whale', 0),
     );
     assert.strictEqual(
       indexOf('Blue Whale', 'Whale', 5),
-      'Blue Whale'.indexOf('Whale', 5)
+      'Blue Whale'.indexOf('Whale', 5),
     );
     assert.strictEqual(
       indexOf('Blue Whale', 'Whale', 7),
-      'Blue Whale'.indexOf('Whale', 7)
+      'Blue Whale'.indexOf('Whale', 7),
     );
     assert.strictEqual(
       indexOf('Blue Whale', 'Whale', 10),
-      'Blue Whale'.indexOf('Whale', 10)
+      'Blue Whale'.indexOf('Whale', 10),
     );
     assert.strictEqual(
       indexOf('Blue Whale', ''),
       // @ts-ignore
-      'Blue Whale'.indexOf('Blue', '')
+      'Blue Whale'.indexOf('Blue', ''),
     );
     assert.strictEqual(
       indexOf('Blue Whale', '', 9),
-      'Blue Whale'.indexOf('', 9)
+      'Blue Whale'.indexOf('', 9),
     );
     assert.strictEqual(
       indexOf('Blue Whale', '', 10),
-      'Blue Whale'.indexOf('', 10)
+      'Blue Whale'.indexOf('', 10),
     );
     assert.strictEqual(
       indexOf('Blue Whale', '', 11),
-      'Blue Whale'.indexOf('', 11)
+      'Blue Whale'.indexOf('', 11),
     );
   });
 
@@ -68,19 +68,19 @@ describe('IndexOf', () => {
       // @ts-ignore
       indexOf('Blue Whale', null),
       // @ts-ignore
-      'Blue Whale'.indexOf(null, '')
+      'Blue Whale'.indexOf(null, ''),
     );
     assert.strictEqual(
       // @ts-ignore
       indexOf('Blue undefined Whale', undefined),
       // @ts-ignore
-      'Blue undefined Whale'.indexOf(undefined)
+      'Blue undefined Whale'.indexOf(undefined),
     );
     assert.strictEqual(
       // @ts-ignore
       indexOf('Blue Whale', 'Whale', Object),
       // @ts-ignore
-      'Blue Whale'.indexOf('Whale', Object)
+      'Blue Whale'.indexOf('Whale', Object),
     );
   });
 

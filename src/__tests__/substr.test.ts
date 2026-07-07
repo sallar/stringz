@@ -19,6 +19,7 @@ describe('Substr', () => {
 
   it('Substrs empty text correctly', () => {
     assert.strictEqual(substr('', 0, 11), '');
+    assert.strictEqual(substr('', -1), '');
   });
 
   it('Substrs if arguments are unspecified', () => {

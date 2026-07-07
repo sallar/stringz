@@ -1,4 +1,3 @@
-// @ts-ignore
 import charRegex from 'char-regex';
 
 /**
@@ -42,7 +41,7 @@ export function length(str: string): number {
 export function substring(
   str: string,
   begin: number = 0,
-  end?: number
+  end?: number,
 ): string {
   // Check for input
   if (typeof str !== 'string') {
@@ -130,7 +129,7 @@ export function limit(
   str: string,
   limit: number = 16,
   padString: string = '#',
-  padPosition: string = 'right'
+  padPosition: string = 'right',
 ): string {
   // Input should be a string, limit should be a number
   if (typeof str !== 'string' || typeof limit !== 'number') {
@@ -175,7 +174,7 @@ export function limit(
 export function indexOf(
   str: string,
   searchStr: string,
-  pos: number = 0
+  pos: number = 0,
 ): number {
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');

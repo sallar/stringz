@@ -11,7 +11,7 @@ describe('Substring', () => {
     assert.strictEqual(substring('Iñtërnâtiônàlizætiøn☃', 0, 10), 'Iñtërnâtiô');
     assert.strictEqual(
       substring(string, 25, 57),
-      'the universe and human stupidity'
+      'the universe and human stupidity',
     );
   });
 

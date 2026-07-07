@@ -28,7 +28,7 @@ describe('Convert String to Array', () => {
       'i',
       'ø',
       'n',
-      '☃'
+      '☃',
     ]);
   });
   it('Throws an error for non-strings', () => {
